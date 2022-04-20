@@ -4,6 +4,8 @@ from time import time
 from flask import Flask, request, jsonify
 from flask.json import JSONEncoder
 
+# FLASK_ENV=development FLASK_APP=miniter.py flask run
+
 """Default JSON Encoder는 set을 JSON으로 변환할 수 없으므로
 Custom Encoder를 작성하여 set을 list로 변환
 """
