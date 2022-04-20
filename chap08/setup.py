@@ -13,4 +13,4 @@ if __name__ == "__main__":
     app.logger.info(f"Running the app...")
 
     manager = Manager(app)
-    manager.run
+    manager.run()

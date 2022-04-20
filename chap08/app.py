@@ -7,6 +7,7 @@ import jwt
 from datetime import datetime, timedelta
 from functools import wraps
 from flask_cors import CORS
+from flask_script._compat import text_type
 
 # FLASK_ENV=development FLASK_APP=miniter.py flask run
 
