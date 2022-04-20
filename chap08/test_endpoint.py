@@ -1,7 +1,7 @@
 import config
 import pytest
 from sqlalchemy import create_engine, text
-from miniter import create_app
+from app import create_app
 from flask import json
 import bcrypt
 
