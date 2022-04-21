@@ -1,3 +1,5 @@
+# nohup python setup.py runserver --host=0.0.0.0 &
+
 import sys
 
 from flask_script import Manager
