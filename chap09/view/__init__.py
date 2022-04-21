@@ -31,7 +31,6 @@ def login_required(f):
 
             user_id = payload['user_id']
             g.user_id = user_id
-            g.user = get_user(user_id) if user_id else None
         else:
             return Response(status=401)
         return f(*args, **kwargs)
@@ -76,7 +75,7 @@ def create_endpoint(app, services):
     @login_required
     def tweet():
         user_tweet = request.json
-        user_tweet['id'] = g.user_id
+        user_id = g.user_id
         tweet = user_tweet['tweet']
 
         result = tweet_service.tweet(user_id, tweet)
@@ -109,7 +108,7 @@ def create_endpoint(app, services):
 
     @app.route('/timeline/<int:user_id>', methods=['GET'])
     def timeline(user_id):
-        timeline = tweet_service.get_timeline(user_id)
+        timeline = tweet_service.timeline(user_id)
 
         return jsonify({
             'user_id': user_id,
@@ -119,9 +118,10 @@ def create_endpoint(app, services):
     @app.route('/timeline', methods=['GET'])
     @login_required
     def user_timeline():
-        timeline = tweet_service.get_timeline(g.user_id)
+        timeline = tweet_service.timeline(g.user_id)
+        user_id = g.user_id
 
         return jsonify({
-            'user_id': g.user_id,
+            'user_id': user_id,
             'timeline': timeline
         })

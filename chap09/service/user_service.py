@@ -27,6 +27,11 @@ class UserService:
         user_credential['hashed_password'].encode('UTF-8'))
 
         return authorized
+    
+    def get_user_id_and_password(self, email):
+        user_credential = self.user_dao.get_user_id_and_password(email)
+        
+        return user_credential
 
     def generate_access_token(self, user_id):
         payload = {
@@ -35,7 +40,7 @@ class UserService:
         }
         token = jwt.encode(payload, self.config['JWT_SECRET_KEY'], 'HS256')
 
-        return token.decode('UTF-8')
+        return token
 
     def follow(self, user_id, follow_id):
         return self.user_dao.insert_follow(user_id, follow_id)
