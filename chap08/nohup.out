@@ -1,0 +1,9 @@
+2022-04-20 21:59:44+0900 [-] Log opened.
+2022-04-20 22:00:09+0900 [-] Log opened.
+2022-04-20 22:00:09+0900 [-] Site starting on 5000
+2022-04-20 22:00:09+0900 [-] Starting factory <twisted.web.server.Site object at 0x7f87c8af4d10>
+2022-04-20 22:00:17+0900 [-] "127.0.0.1" - - [20/Apr/2022:13:00:17 +0000] "GET /ping HTTP/1.1" 200 4 "-" "curl/7.64.1"
+2022-04-20 22:00:25+0900 [-] Received SIGINT, shutting down.
+2022-04-20 22:00:25+0900 [twisted.web.server.Site] (TCP Port 5000 Closed)
+2022-04-20 22:00:25+0900 [-] Stopping factory <twisted.web.server.Site object at 0x7f87c8af4d10>
+2022-04-20 22:00:25+0900 [-] Main loop terminated.
